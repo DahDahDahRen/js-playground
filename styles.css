@@ -5,6 +5,10 @@ body {
   line-height: 175%;
 }
 
+* {
+  transition: all 200ms ease-in-out;
+}
+
 h1 {
   font-size: 36px;
   line-height: 125%;
@@ -25,4 +29,20 @@ h1 {
   background-color: rgb(69, 69, 254);
   color: white;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-outline {
+  border: 2px solid blue;
+  background-color: transparent;
+  color: black;
+}
+
+.btn-container {
+  margin-top: 36px;
+  padding: 36px;
+  border-radius: 12px;
+}
+
+.btn-container .btn {
+  margin-left: 16px;
 }

@@ -25,6 +25,7 @@ getEvenAndOddNumber(number);
 
 // DOM Manipulation
 function startDOM() {
+  // Basic DOM Manipulation
   const messageElement = document.querySelector("#message");
   const btnClick = document.querySelector("#btn-click");
   const headingOne = document.querySelector(".heading-one");
@@ -51,6 +52,38 @@ function startDOM() {
     headingOne.style.color = "white";
     headingOne.style.borderRadius = "16px";
   });
+
+  function showEventDelegation() {
+    const btnContainer = document.querySelector(".btn-container");
+    const btnElements = document.querySelectorAll(".btn");
+
+    btnContainer.addEventListener("click", (event) => {
+      if (event.target.classList.contains("btn")) {
+        // Remove Outline class from btns
+        btnElements.forEach((btnElement) => {
+          btnElement.classList.remove("btn-outline");
+        });
+
+        // Apply Outline to the click button
+        event.target.classList.add("btn-outline");
+
+        if (event.target.classList.contains("btn-1")) {
+          event.target.closest(".btn-container").style.backgroundColor = "red";
+        }
+
+        if (event.target.classList.contains("btn-2")) {
+          event.target.closest(".btn-container").style.backgroundColor = "blue";
+        }
+
+        if (event.target.classList.contains("btn-3")) {
+          event.target.closest(".btn-container").style.backgroundColor =
+            "green";
+        }
+      }
+    });
+  }
+
+  showEventDelegation();
 }
 
 startDOM();

@@ -84,6 +84,32 @@ function startDOM() {
   }
 
   showEventDelegation();
+
+  function intersectionObserver() {
+    const sectionTargetOne = document.querySelector(".section-target-1");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        console.log(entries[0]);
+
+        if (entries[0].isIntersecting === true) {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color = "white";
+        } else {
+          document.body.style.backgroundColor = "white";
+          document.body.style.color = "black";
+        }
+      },
+      {
+        root: null,
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(sectionTargetOne);
+  }
+
+  intersectionObserver();
 }
 
 startDOM();

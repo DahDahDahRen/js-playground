@@ -6,10 +6,6 @@ body {
   height: 100vh;
 }
 
-* {
-  transition: all 200ms ease-in-out;
-}
-
 h1 {
   font-size: 36px;
   line-height: 125%;
@@ -51,4 +47,11 @@ h1 {
 
 .btn-container .btn {
   margin-left: 16px;
+}
+
+.section-container {
+  padding: 140px 0;
+  text-align: center;
+  border: 2px solid red;
+  margin: 32px 0;
 }
